@@ -1,15 +1,3 @@
-#import subprocess
-#import webbrowser
-#subprocess.Popen(['python', '-m','http.server','8000'])
-#chrome = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-#webbrowser.get(chrome).open('http://localhost:8000')
-
-#while True:
-#    dr = webdriver.Chrome()
-#    dr.get("http://bacalaureat.edu.ro/")
-#    time.sleep(10)
-#    dr.close()
-
 import sys
 import time
 from selenium import webdriver
@@ -42,7 +30,6 @@ def deployToGithub():
     os.system("git add .")
     os.system('git commit -m "new commit"')
     os.system('git push origin master')
-
 
 def runOnCloud():
     setProperties("prod")
