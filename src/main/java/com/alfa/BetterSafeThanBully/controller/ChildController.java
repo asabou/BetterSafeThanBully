@@ -3,11 +3,13 @@ package com.alfa.BetterSafeThanBully.controller;
 import com.alfa.BetterSafeThanBully.domain.Child;
 import com.alfa.BetterSafeThanBully.service.IChildService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/child")
 public class ChildController {
@@ -18,7 +20,11 @@ public class ChildController {
         this.childService = childService;
     }
 
-    @GetMapping("/login/{username}")
+    @GetMapping(
+            value = "/login/{username}",
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE
+    )
     private ResponseEntity<?> login(@PathVariable("username") String username) {
         Optional<Child> childOptional = childService.findByUsername(username);
         if (childOptional.isPresent()) {
