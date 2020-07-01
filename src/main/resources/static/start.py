@@ -37,13 +37,16 @@ def runOnCloud():
 
 def main():
      arguments = sys.argv
-     if (arguments[1] == "dev"):
-         print("Running on localhost .............")
-         runLocal()
-     elif (arguments[1] == "prod"):
-         print("Running on cloud ..............")
-         runOnCloud()
+     if (len(arguments) == 2):
+        if (arguments[1] == "dev"):
+            print("Running on localhost .............")
+            runLocal()
+        elif (arguments[1] == "prod"):
+            print("Running on cloud ..............")
+            runOnCloud()
+        else:
+             print("Invalid argument!!!!")
      else:
-         print("Invalid argument!!!!")
+        print("Give an argument! { prod/dev }")
 
 main()

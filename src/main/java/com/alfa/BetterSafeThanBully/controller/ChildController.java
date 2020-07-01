@@ -30,11 +30,11 @@ public class ChildController {
 
     @PostMapping("/save")
     private ResponseEntity<?> saveChild(@RequestBody Child child) {
-       if (this.login(child.getUsername()).getStatusCode() == HttpStatus.NOT_FOUND) {
-           childService.save(child);
-           return new ResponseEntity<>("child saved!", HttpStatus.OK);
-       } else {
-           return new ResponseEntity<>("already exists!", HttpStatus.CONFLICT);
-       }
+        if (this.login(child.getUsername()).getStatusCode() == HttpStatus.NOT_FOUND) {
+            childService.save(child);
+            return new ResponseEntity<>("child saved!", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("already exists!", HttpStatus.CONFLICT);
+        }
     }
 }

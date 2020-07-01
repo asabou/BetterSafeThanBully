@@ -1,0 +1,90 @@
+body {
+	background-color: rgb(177, 240, 230);
+	font-size: 100%;
+}
+
+#title {
+	padding-top:2%;
+	padding-bottom: 2%;
+	margin-top:2%;
+	margin-bottom:4%;
+	width: 100%;
+	float: left;
+	margin: auto;
+	font-family: Georgia;
+	color: white;
+	text-shadow: 4px 4px 4px rgb(67, 108, 122);
+	text-decoration: underline;
+	text-align: center;
+	font-size:2.5em ;
+	
+}
+
+#headerPage {
+	
+	padding-top:2%;
+	padding-bottom: 2%;
+	margin-top:2%;
+	margin-bottom:2%;
+	width: 100%;
+	float: left;
+	margin: auto;
+	font-family: Georgia;
+	color: rgb(158, 89, 155);
+	text-align: center;
+	font-size: 1.2em ;
+	
+}
+
+#motto {
+	font-style: oblique;
+	color: rgb(156, 101, 143);
+	font-weight: bold;
+}
+
+#itemList {
+	float: left;
+	list-style-type: none;
+}
+
+#tableLogIn {
+	
+	width: 100%;
+	margin: auto;
+	float: left;
+}
+
+td {
+	width: 33.33%;
+	font-family: Georgia;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 1.1em ;
+}
+
+#cellProf, #divLogProf {
+	background-color: rgb(118, 194, 191);
+}
+
+#cellChild, #divLogChild {
+	background-color: rgb(107, 227, 222);
+}
+
+#cellParent, #divLogParent {
+	background-color: rgb(123, 206, 227);
+}
+
+.divLogIn {
+	visibility: hidden;
+	width: 33.33%;
+	float: left;
+	padding-top:2%;
+	padding-bottom: 2%;
+	margin-top:2%;
+	margin-bottom:2%;
+	font-family: Georgia;
+	text-align: center;
+}
+
+

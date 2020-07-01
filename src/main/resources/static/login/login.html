@@ -1,0 +1,67 @@
+<html lang="en">
+    <head>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+		<title></title>
+    </head>
+	
+	<body>
+		<div id="title"> Better safe than bully </div>
+		
+		<div id="headerPage">
+			<p id="motto"> Ce tie nu-ti place, altuia nu-i face... dar nici nu trece cu vederea!<p>
+			<p>Bun venit in comunitatea noastra!</p> <br>
+			<p>Aici poti vorbi deschis despre problemele tale cu specialisti sau alte persoane aflate in situatii similare. <br>
+		Continua ca:
+		</div>
+		
+		<table id="tableLogIn">
+			<tr>
+				<td id="cellProf" onclick="displayDivLogProf()">Profesionist</td>
+				<td id="cellChild" onclick="displayDivLogChild()">Copil</td>
+				<td id="cellParent" onclick="displayDivLogParent()">Parinte</td>
+			</tr>
+		</table>
+		
+		<div class="divLogIn" id="divLogProf">
+			<form id="logInProf">
+				<fieldset>
+					<legend> Autentificare profesionist</legend>
+					Utilizator: <input type="text" name="username"> <br>
+					<br>
+					Parola: <input type="password" name="password"> <br>
+					<br>
+					<input type="button" name="login" value="Autentifica" onclick="openConversations()">
+				</fieldset>
+			</form>
+		</div>
+		
+		<div class="divLogIn" id="divLogChild">
+			<form id="logInChild" >
+				<fieldset>
+					<legend> Autentificare copil</legend>
+					Utilizator: <input type="text" name="username"> <br>
+					<br>
+					Parola: <input type="password" name="password"> <br>
+					<br>
+					<input type="button" name="login" value="Autentifica" onclick="openConversations()">
+				</fieldset>
+			</form>
+		</div>
+		
+		<div class="divLogIn" id="divLogParent">
+			<form id="logInParent" >
+				<fieldset>
+					<legend> Autentificare parinte</legend>
+					Utilizator: <input type="text" name="username"> <br>
+					<br>
+					Parola: <input type="password" name="password"> <br>
+					<br>
+					<input type="button" name="login" value="Autentifica" onclick="openConversations()">
+				</fieldset>
+			</form>
+		</div> 
+	</body>
+	
+</html>
+	
