@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <script src="script.js"></script>
+        <script src="../script.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
 		<title></title>
     </head>
@@ -27,11 +27,11 @@
 			<form id="logInProf">
 				<fieldset>
 					<legend> Autentificare profesionist</legend>
-					Utilizator: <input type="text" name="username"> <br>
+					Utilizator: <input type="text" name="username" id="usernamePsychologist"> <br>
 					<br>
-					Parola: <input type="password" name="password"> <br>
+					Parola: <input type="password" name="password" id="passwordPsychologist"> <br>
 					<br>
-					<input type="button" name="login" value="Autentifica" onclick="openConversations()">
+					<input type="button" name="login" value="Autentifica" onclick="openPsychologistConversations()">
 				</fieldset>
 			</form>
 		</div>
@@ -40,11 +40,11 @@
 			<form id="logInChild" >
 				<fieldset>
 					<legend> Autentificare copil</legend>
-					Utilizator: <input type="text" name="username"> <br>
+					Utilizator: <input type="text" name="username" id="usernameChild"> <br>
 					<br>
-					Parola: <input type="password" name="password"> <br>
+					Parola: <input type="password" name="password" id="passwordChild"> <br>
 					<br>
-					<input type="button" name="login" value="Autentifica" onclick="openConversations()">
+					<input type="button" name="login" value="Autentifica" onclick="openChildConversations()">
 				</fieldset>
 			</form>
 		</div>
@@ -53,11 +53,11 @@
 			<form id="logInParent" >
 				<fieldset>
 					<legend> Autentificare parinte</legend>
-					Utilizator: <input type="text" name="username"> <br>
+					Utilizator: <input type="text" name="username" id="usernameParent"> <br>
 					<br>
-					Parola: <input type="password" name="password"> <br>
+					Parola: <input type="password" name="password" id="passwordParent"> <br>
 					<br>
-					<input type="button" name="login" value="Autentifica" onclick="openConversations()">
+					<input type="button" name="login" value="Autentifica" onclick="openParentConversations()">
 				</fieldset>
 			</form>
 		</div> 

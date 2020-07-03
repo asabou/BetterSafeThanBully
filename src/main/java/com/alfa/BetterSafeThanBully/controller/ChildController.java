@@ -20,11 +20,7 @@ public class ChildController {
         this.childService = childService;
     }
 
-    @GetMapping(
-            value = "/login/{username}",
-            produces = MediaType.APPLICATION_JSON_VALUE,
-            consumes = MediaType.APPLICATION_JSON_VALUE
-    )
+    @GetMapping("/login/{username}")
     private ResponseEntity<?> login(@PathVariable("username") String username) {
         Optional<Child> childOptional = childService.findByUsername(username);
         if (childOptional.isPresent()) {
