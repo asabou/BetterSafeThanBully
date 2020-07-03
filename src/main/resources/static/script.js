@@ -28,18 +28,20 @@ function loginRequest(url, password) {
             'Content-type': 'application/json'
         }
     })
-        .then(response => response.json())
         .then(response => {
-            if (response.includes("not found")) {
-                alert("Credentiale incorecte!");
-            }   else {
-                let user = response;
-                if(password === user.password) {
-                    USERNAME = user.username;
-                    window.open("/conversation/conversation.html", "_self","", true);
-                } else {
-                    alert("Credentiale incorecte!");
-                }
+            if (response.ok) {
+                return response.json();
+            } else {
+                alert("Credentiale invalide!");
+                return Promise.reject("not found");
+            }
+        })
+        .then(data => {
+            if (data.password === password) {
+                USERNAME = data.username;
+                window.open("conversation/conversation.html", "_self","", true);
+            } else {
+                alert("Credentiale invalide!");
             }
         });
 }
