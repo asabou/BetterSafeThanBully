@@ -39,7 +39,7 @@ function loginRequest(url, password) {
         .then(data => {
             if (data.password === password) {
                 USERNAME = data.username;
-                window.open("conversation/conversation.html", "_self","", true);
+                window.open("../conversation/conversation.html", "_self","", true);
             } else {
                 alert("Credentiale invalide!");
             }
@@ -55,3 +55,14 @@ function openChildConversations() {
     loginRequest(BASE_URL+"/child/login/"+username, password);
 }
 
+function openParentConversations() {
+    let username = document.getElementById("usernameParent").value;
+    let password = document.getElementById("passwordParent").value;
+    loginRequest(BASE_URL+"/parent/login/"+username, password);
+}
+
+function openPsychologistConversations() {
+    let username = document.getElementById("usernamePsychologist").value;
+    let password = document.getElementById("passwordPsychologist").value;
+    loginRequest(BASE_URL+"/psychologist/login/"+username, password);
+}
