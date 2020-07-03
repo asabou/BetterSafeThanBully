@@ -5,7 +5,6 @@ import subprocess
 import webbrowser
 import os
 
-
 def setProperties(environment):
     command = "copy C:\\Users\\alexandru.sabou\\Desktop\\BetterSafeThanBully\\src\\main\\resources\\application-"+environment+".properties C:\\Users\\alexandru.sabou\\Desktop\\BetterSafeThanBully\\src\\main\\resources\\application.properties"
     os.system(command)
@@ -31,9 +30,14 @@ def deployToGithub():
     os.system('git commit -m "new commit"')
     os.system('git push origin master')
 
+def startCloudClient():
+    chrome = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+    webbrowser.get(chrome).open('https://better-safe-than-bully.herokuapp.com/')
+
 def runOnCloud():
     setProperties("prod")
     deployToGithub()
+    startCloudClient()
 
 def main():
      arguments = sys.argv

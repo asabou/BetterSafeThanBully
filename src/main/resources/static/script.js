@@ -38,7 +38,8 @@ function loginRequest(url, password) {
         })
         .then(data => {
             if (data.password === password) {
-                USERNAME = data.username;
+                let username = data.username;
+                localStorage.setItem("username", username);
                 window.open("../conversation/conversation.html", "_self","", true);
             } else {
                 alert("Credentiale invalide!");
@@ -46,8 +47,36 @@ function loginRequest(url, password) {
         });
 }
 
+function openConversationPage() {
+    getConversationsForUser(localStorage.getItem("username"));
+}
+
+function getConversationsForUser(username) {
+    const url = BASE_URL+"/conversation/get-by-username/"+username;
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Access-Cotrol-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .then(data => {
+            //console.log(data);
+            let table = document.getElementById("conversations");
+            data.forEach(row => {
+                const conversationTitle = row.title;
+                const tr = document.createElement("tr"); //creare tabel dinamic js
+                const td = document.createElement("td");
+                td.textContent = conversationTitle; // populare celula din tabel la randul curent
+                td.id = conversationTitle; // id pt fiecare celula td
+                tr.appendChild(td);
+                table.appendChild(tr);
+            });
+        });
+}
+
 const BASE_URL = "https://better-safe-than-bully.herokuapp.com/api";
-let USERNAME = "";
 
 function openChildConversations() {
     let username = document.getElementById("usernameChild").value;
