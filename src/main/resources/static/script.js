@@ -91,17 +91,15 @@ function getMessages(x) {
         .then(data => data.json())
         .then(data => {
             let table = document.getElementById("messages");
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+            }
             data.forEach(row => {
-                console.log(row);
                 const tr = document.createElement("tr");
                 const td = document.createElement("td");
-                // td.textContent = row.usernameSender + " : " + row.
-                // tr.appendChild(td);
-                // tr.onclick = function() {
-                //     return getMessages(this);
-                // }
-                // tr.id = conversationTitle;
-                // table.appendChild(tr);
+                td.textContent = row.usernameSender + " : " + row.content+"\n";
+                tr.appendChild(td);
+                table.appendChild(tr);
             });
         });
 }
