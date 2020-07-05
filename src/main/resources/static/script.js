@@ -84,7 +84,7 @@ function getMessages(x) {
     let body = {};
     body["title"] = convTitle;
     fetch(url, {
-        method: 'GET',
+        method: 'POST',
         body: body,
         headers: {
             'Access-Control-Allow-Origin': '*',
