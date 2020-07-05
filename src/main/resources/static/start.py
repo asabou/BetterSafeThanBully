@@ -37,6 +37,7 @@ def startCloudClient():
 def runOnCloud():
     setProperties("prod")
     deployToGithub()
+    time.sleep(20)
     startCloudClient()
 
 def main():

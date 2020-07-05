@@ -24,7 +24,7 @@ function loginRequest(url, password) {
     fetch(url, {
         method: 'GET',
         headers: {
-            'Access-Cotrol-Allow-Origin' : '*',
+            'Access-Control-Allow-Origin' : '*',
             'Content-type': 'application/json'
         }
     })
@@ -56,22 +56,55 @@ function getConversationsForUser(username) {
     fetch(url, {
         method: 'GET',
         headers: {
-            'Access-Cotrol-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': '*',
             'Content-type': 'application/json'
         }
     })
         .then(data => data.json())
         .then(data => {
-            //console.log(data);
             let table = document.getElementById("conversations");
             data.forEach(row => {
                 const conversationTitle = row.title;
-                const tr = document.createElement("tr"); //creare tabel dinamic js
+                const tr = document.createElement("tr");
                 const td = document.createElement("td");
-                td.textContent = conversationTitle; // populare celula din tabel la randul curent
-                td.id = conversationTitle; // id pt fiecare celula td
+                td.textContent = conversationTitle;
                 tr.appendChild(td);
+                tr.onclick = function() {
+                    return getMessages(this);
+                }
+                tr.id = conversationTitle;
                 table.appendChild(tr);
+            });
+        });
+}
+
+function getMessages(x) {
+    const convTitle = x.id;
+    const url = BASE_URL + "/messages/get-by-conversation-title";
+    let body = {};
+    body["title"] = convTitle;
+    fetch(url, {
+        method: 'GET',
+        body: body,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .then(data => {
+            let table = document.getElementById("messages");
+            data.forEach(row => {
+                console.log(row);
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                // td.textContent = row.usernameSender + " : " + row.
+                // tr.appendChild(td);
+                // tr.onclick = function() {
+                //     return getMessages(this);
+                // }
+                // tr.id = conversationTitle;
+                // table.appendChild(tr);
             });
         });
 }
@@ -95,3 +128,4 @@ function openPsychologistConversations() {
     let password = document.getElementById("passwordPsychologist").value;
     loginRequest(BASE_URL+"/psychologist/login/"+username, password);
 }
+

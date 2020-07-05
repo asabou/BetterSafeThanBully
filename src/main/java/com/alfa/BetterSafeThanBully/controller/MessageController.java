@@ -1,5 +1,6 @@
 package com.alfa.BetterSafeThanBully.controller;
 
+import com.alfa.BetterSafeThanBully.controller.dto.ConversationDTO;
 import com.alfa.BetterSafeThanBully.domain.Conversation;
 import com.alfa.BetterSafeThanBully.domain.Message;
 import com.alfa.BetterSafeThanBully.service.IConversationService;
@@ -16,6 +17,7 @@ import java.util.Optional;
 public class MessageController {
     private final IConversationService conversationService;
     private final IMessageService messageService;
+
     public MessageController(IConversationService conversationService, IMessageService messageService) {
         this.conversationService = conversationService;
         this.messageService = messageService;
@@ -32,8 +34,8 @@ public class MessageController {
         }
     }
 
-    @GetMapping("/get-by-conversation-title/{title}")
-    private ResponseEntity<?> findMessagesByConversationTitle(@PathVariable("title") String title) {
-        return new ResponseEntity<>(messageService.findMessagesByConversationTitle(title), HttpStatus.OK);
+    @PostMapping("/get-by-conversation-title")
+    private ResponseEntity<?> findMessagesByConversationTitle(@RequestBody ConversationDTO conversation) {
+        return new ResponseEntity<>(messageService.findMessagesByConversationTitle(conversation.getTitle()), HttpStatus.OK);
     }
 }

@@ -1,0 +1,51 @@
+body {
+    background-color: #b1f0e6;
+    font-size: 100%;
+}
+
+caption {
+    color: #9c658f;
+    font-family: Algerian;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 27px;
+    margin: 10px;
+    padding: 5px;
+    text-shadow: 2px 2px 2px #28a0bd;
+}
+
+tr {
+    background-color: #af83a5;
+    height: 50px;
+    font-family: Cambria;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+
+td.title {
+    padding: 10px;
+    margin: 30px;
+}
+
+#motto {
+    font-family: Georgia;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    color: #9c658f;
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: 4px 4px 4px #ffffff;
+}
+
+#bullingPhoto {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    border: 4px dashed #af83a5;
+    border-radius: 7px;
+    box-shadow: 3px 3px 3px #1f7c93;
+}
