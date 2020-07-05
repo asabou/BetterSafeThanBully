@@ -79,13 +79,10 @@ function getConversationsForUser(username) {
 }
 
 function getMessages(x) {
-    const convTitle = x.id;
-    const url = BASE_URL + "/message/get-by-conversation-title";
-    let body = {};
-    body["title"] = convTitle;
+    const convTitle = x.rowIndex;
+    const url = BASE_URL + "/message/get-by-conversation-title/"+convTitle;
     fetch(url, {
-        method: 'POST',
-        body: body,
+        method: 'GET',
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Content-type': 'application/json'

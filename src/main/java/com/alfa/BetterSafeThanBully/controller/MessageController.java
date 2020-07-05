@@ -1,6 +1,5 @@
 package com.alfa.BetterSafeThanBully.controller;
 
-import com.alfa.BetterSafeThanBully.controller.dto.ConversationDTO;
 import com.alfa.BetterSafeThanBully.domain.Conversation;
 import com.alfa.BetterSafeThanBully.domain.Message;
 import com.alfa.BetterSafeThanBully.service.IConversationService;
@@ -34,10 +33,8 @@ public class MessageController {
         }
     }
 
-    @PostMapping("/get-by-conversation-title")
-    private ResponseEntity<?> findMessagesByConversationTitle(@RequestBody ConversationDTO conversation) {
-        System.out.println(conversation.getTitle());
-        messageService.findMessagesByConversationTitle(conversation.getTitle()).forEach(System.out::println);
-        return new ResponseEntity<>(messageService.findMessagesByConversationTitle(conversation.getTitle()), HttpStatus.OK);
+    @GetMapping("/get-by-conversation-title/{title}")
+    private ResponseEntity<?> findMessagesByConversationTitle(@PathVariable("title") String title) {
+        return new ResponseEntity<>(messageService.findMessagesByConversationTitle(title), HttpStatus.OK);
     }
 }
