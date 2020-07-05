@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin
@@ -33,8 +34,9 @@ public class MessageController {
         }
     }
 
-    @GetMapping("/get-by-conversation-title/{title}")
-    private ResponseEntity<?> findMessagesByConversationTitle(@PathVariable("title") String title) {
-        return new ResponseEntity<>(messageService.findMessagesByConversationTitle(title), HttpStatus.OK);
+    @GetMapping("/get-by-conversation-title/{title}/get-by-username/{username}")
+    private ResponseEntity<?> findMessagesByConversationTitle(@PathVariable("title") Integer title, @PathVariable("username") String username) { //title is the index
+        List<Conversation> list = conversationService.findConversationsByUsername(username);
+        return new ResponseEntity<>(messageService.findMessagesByConversationTitle(list.get(title).getTitle()), HttpStatus.OK);
     }
 }
