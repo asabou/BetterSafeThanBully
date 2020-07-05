@@ -36,6 +36,8 @@ public class MessageController {
 
     @PostMapping("/get-by-conversation-title")
     private ResponseEntity<?> findMessagesByConversationTitle(@RequestBody ConversationDTO conversation) {
+        System.out.println(conversation.getTitle());
+        messageService.findMessagesByConversationTitle(conversation.getTitle()).forEach(System.out::println);
         return new ResponseEntity<>(messageService.findMessagesByConversationTitle(conversation.getTitle()), HttpStatus.OK);
     }
 }
