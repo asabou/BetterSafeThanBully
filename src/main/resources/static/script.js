@@ -80,7 +80,7 @@ function getConversationsForUser(username) {
 
 function getMessages(x) {
     const convTitle = x.id;
-    const url = BASE_URL + "/messages/get-by-conversation-title";
+    const url = BASE_URL + "/message/get-by-conversation-title";
     let body = {};
     body["title"] = convTitle;
     fetch(url, {
