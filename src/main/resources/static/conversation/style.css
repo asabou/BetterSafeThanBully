@@ -4,13 +4,14 @@ body {
 }
 
 caption {
+    margin-top: 3%;
     color: #9c658f;
     font-family: Algerian;
     font-weight: bold;
     font-style: italic;
     font-size: 27px;
-    margin: 10px;
-    padding: 5px;
+    margin: 0.625 em;
+    padding: 0.3125 em;
     text-shadow: 2px 2px 2px #28a0bd;
 }
 
@@ -20,16 +21,17 @@ tr {
     font-family: Cambria;
     font-size: 16px;
     font-weight: bold;
-    text-transform: capitalize;
     color: #ffffff;
 }
 
 td {
-    padding: 10px;
-    margin: 30px;
+    padding: 0.625em;
+    margin: 1.875em;
 }
 
 #motto {
+    margin-top: 2%;
+    margin-bottom: 4%;
     font-family: Georgia;
     font-size: 40px;
     font-weight: bold;
@@ -42,21 +44,20 @@ td {
 }
 
 #photoBulling {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 3%;
     position: absolute;
-    right: 20px;
-    top: 40px;
+    top: 4%;
+    right: 2%;
     border: 4px dashed #af83a5;
-    border-radius: 7px;
+    border-radius: 10px;
     box-shadow: 3px 3px 3px #1f7c93;
 }
 
-#left {
-    /*visibility: visible;*/
-}
-
 #right {
-    /*visibility: hidden;*/
+    display: inline;
     position: absolute;
-    top: 55px;
-    right: 600px;
+    top: 7.1875em;
+    right: 28.125em;
 }
