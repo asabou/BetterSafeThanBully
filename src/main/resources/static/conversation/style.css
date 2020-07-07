@@ -3,61 +3,58 @@ body {
     font-size: 100%;
 }
 
-caption {
-    margin-top: 3%;
-    color: #9c658f;
-    font-family: Algerian;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 27px;
-    margin: 0.625 em;
-    padding: 0.3125 em;
-    text-shadow: 2px 2px 2px #28a0bd;
-}
-
-tr {
-    background-color: #af83a5;
-    height: 50px;
-    font-family: Cambria;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-td {
-    padding: 0.625em;
-    margin: 1.875em;
-}
-
-#motto {
-    margin-top: 2%;
-    margin-bottom: 4%;
+#motto{
+    padding-top:2%;
+	padding-bottom: 2%;
+	margin-top:2%;
+	margin-bottom:4%;
+	width: 100%;
+	float: left;
+	margin: auto;
     font-family: Georgia;
-    font-size: 40px;
+    font-size:  2.5em;
     font-weight: bold;
     font-style: italic;
     text-decoration: underline;
     color: #9c658f;
-    text-transform: capitalize;
     text-align: center;
     text-shadow: 4px 4px 4px #ffffff;
 }
 
-#photoBulling {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 3%;
-    position: absolute;
-    top: 4%;
-    right: 2%;
-    border: 4px dashed #af83a5;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px #1f7c93;
+#left{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: 2%;
+    width: 40%;
+	float: left;
+    background-color: rgb(214, 167, 209);
 }
 
-#right {
-    display: inline;
-    position: absolute;
-    top: 7.1875em;
-    right: 28.125em;
+#right{
+    margin-top: 2%;
+	width: 50%;
+	float: left;
+    
+}
+
+#conversations{
+    background-color: rgb(214, 167, 209);
+    margin: auto;
+    width: 90%;
+}
+
+#messages{
+    background-color: rgb(214, 167, 209);
+    margin: auto;
+    width: 100%;
+}
+
+#photo{
+    width:100%;
+    height:60%;
+    clear: left;
+}
+
+tr{
+    background-color:rgb(245, 198, 232);
 }
