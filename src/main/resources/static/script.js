@@ -71,7 +71,7 @@ function registrationActionParent(){
     body["firstName"] = document.getElementById("firstNameParentCC").value;
     body["lastName"] = document.getElementById("lastNameParentCC").value;
     if (validateRegistrationForm(body, "PARENT")) {
-        registrationRequest(url, body);
+        doRegistrationRequest(url, body);
         document.getElementById("registrationParentDiv").style.visibility= "hidden";
     }
 }
@@ -154,13 +154,13 @@ function doRegistrationRequest(url, body) {
         },
         body: body
     })
-        .then(response => response.json())
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
         .then(json => console.log(json));
     alert("Felicitari, inregistrarea dumneavoastra a fost incheiata cu succes! Va rugam sa va autentificati pentru a continua. ");
-}
-
-function registrationRequest(url, body) {
-   doRegistrationRequest(url, body);
 }
 
 function loginRequest(url, password) {
