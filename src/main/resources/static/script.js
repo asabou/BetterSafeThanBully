@@ -53,7 +53,7 @@ function registrationActionProf(){
     body["firstName"] = document.getElementById("firstNamePsychologistCC").value;
     body["lastName"] = document.getElementById("lastNamePsychologistCC").value;
     if (validateRegistrationForm(body, "PSYCHOLOGIST")) {
-        doRegistrationRequest(url, body);
+        doRegistrationRequest(url, JSON.stringify(body));
         document.getElementById("registrationProfDiv").style.visibility= "hidden";
     }
 }
@@ -71,7 +71,7 @@ function registrationActionParent(){
     body["firstName"] = document.getElementById("firstNameParentCC").value;
     body["lastName"] = document.getElementById("lastNameParentCC").value;
     if (validateRegistrationForm(body, "PARENT")) {
-        doRegistrationRequest(url, body);
+        doRegistrationRequest(url, JSON.stringify(body));
         document.getElementById("registrationParentDiv").style.visibility= "hidden";
     }
 }
