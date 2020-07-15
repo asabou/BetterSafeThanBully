@@ -156,11 +156,12 @@ function doRegistrationRequest(url, body) {
     })
         .then(response => {
             if (response.ok) {
+                alert("Felicitari, inregistrarea dumneavoastra a fost incheiata cu succes! Va rugam sa va autentificati pentru a continua. ");
                 return response.json();
+            } else {
+                return Promise.reject("invalid!");
             }
-        })
-        .then(json => console.log(json));
-    alert("Felicitari, inregistrarea dumneavoastra a fost incheiata cu succes! Va rugam sa va autentificati pentru a continua. ");
+        });
 }
 
 function loginRequest(url, password) {
