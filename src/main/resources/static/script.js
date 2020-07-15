@@ -271,6 +271,127 @@ function openChildConversations() {
     loginRequest(BASE_URL+"/child/login/"+username, password);
 }
 
+function openCreateConversationPage() {
+    window.open("../create-conversation/createConversation.html", "_self", "", true);
+}
+
+function generateTables() {
+    generateChildsProfileTable();
+    generateParentsProfileTable();
+    generatePsychologistsProfileTable();
+}
+
+function generatePsychologistsProfileTable() {
+    const url = BASE_URL + "/psychologist/all";
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .then(data => {
+            let table = document.getElementById("profilesPsychologists");
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+            }
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                const td1 = document.createElement("td");
+                const td2 = document.createElement("td");
+                const td3 = document.createElement("td");
+                td1.textContent = row.firstName;
+                td2.textContent = row.lastName;
+                td3.textContent = row.username;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.onclick = function() {
+                    localStorage.setItem("usernameForConversation", row.username);
+                    alert(row.username);
+                }
+                table.appendChild(tr);
+            });
+        });
+}
+
+function generateParentsProfileTable() {
+    const url = BASE_URL + "/parent/all";
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .then(data => {
+            let table = document.getElementById("profilesParents");
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+            }
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                const td1 = document.createElement("td");
+                const td2 = document.createElement("td");
+                const td3 = document.createElement("td");
+                td1.textContent = row.firstName;
+                td2.textContent = row.lastName;
+                td3.textContent = row.username;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.onclick = function() {
+                    localStorage.setItem("usernameForConversation", row.username);
+                    alert(row.username);
+                }
+                table.appendChild(tr);
+            });
+        });
+}
+
+function generateChildsProfileTable() {
+    const url = BASE_URL + "/child/all";
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .then(data => {
+            let table = document.getElementById("profilesChilds");
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+            }
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                const td1 = document.createElement("td");
+                const td2 = document.createElement("td");
+                const td3 = document.createElement("td");
+                const td4 = document.createElement("td");
+                const td5 = document.createElement("td");
+                td1.textContent = row.firstName;
+                td2.textContent = row.lastName;
+                td3.textContent = row.origin;
+                td4.textContent = row.birthday;
+                td5.textContent = row.username;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+                tr.onclick = function() {
+                    localStorage.setItem("usernameForConversation", row.username);
+                    alert(row.username);
+                }
+                table.appendChild(tr);
+            });
+        });
+}
+
 function openParentConversations() {
     let username = document.getElementById("usernameParent").value;
     let password = document.getElementById("passwordParent").value;

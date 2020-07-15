@@ -39,4 +39,9 @@ public class ChildController {
             return new ResponseEntity<>("already exists!", HttpStatus.CONFLICT);
         }
     }
+
+    @GetMapping("/all")
+    private ResponseEntity<?> findAll() {
+        return new ResponseEntity<>(childService.findAll(), HttpStatus.OK);
+    }
 }

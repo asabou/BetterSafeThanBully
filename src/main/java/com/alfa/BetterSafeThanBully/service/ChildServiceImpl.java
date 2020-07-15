@@ -4,6 +4,7 @@ import com.alfa.BetterSafeThanBully.domain.Child;
 import com.alfa.BetterSafeThanBully.repository.IChildRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,5 +23,10 @@ public class ChildServiceImpl implements IChildService {
     @Override
     public Optional<Child> findByUsername(String username) {
         return childRepo.findById(username);
+    }
+
+    @Override
+    public List<Child> findAll() {
+        return childRepo.findAll();
     }
 }

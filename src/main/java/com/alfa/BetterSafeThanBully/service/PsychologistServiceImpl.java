@@ -4,6 +4,7 @@ import com.alfa.BetterSafeThanBully.domain.Psychologist;
 import com.alfa.BetterSafeThanBully.repository.IPsychologistRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +22,10 @@ public class PsychologistServiceImpl implements IPsychologistService {
     @Override
     public Optional<Psychologist> findByUsername(String username) {
         return psychologistRepo.findById(username);
+    }
+
+    @Override
+    public List<Psychologist> findAll() {
+        return psychologistRepo.findAll();
     }
 }

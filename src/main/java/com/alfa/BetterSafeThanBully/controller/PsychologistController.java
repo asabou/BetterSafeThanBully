@@ -38,4 +38,9 @@ public class PsychologistController {
         }
     }
 
+    @GetMapping("/all")
+    private ResponseEntity<?> findAll() {
+        return new ResponseEntity<>(psychologistService.findAll(), HttpStatus.OK);
+    }
+
 }
