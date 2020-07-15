@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class Psychologist implements Serializable {
+public class Psychologist {
     @Id
     private String username;
     private String password;

@@ -80,7 +80,7 @@ function registrationActionParent(){
     let body = {}
     body["username"] = document.getElementById("usernameParentCC").value;
     body["password"] = document.getElementById("passwordParentCC").value;
-    body["confirmPassword"] = document.getElementById("confirmPasswordParet=ntCC").value;
+    body["confirmPassword"] = document.getElementById("confirmPasswordParentCC").value;
     body["firstName"] = document.getElementById("firstNameParentCC").value;
     body["lastName"] = document.getElementById("lastNameParentCC").value;
     if (validateRegistrationForm(body, "PARENT")) {
