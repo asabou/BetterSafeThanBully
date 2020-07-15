@@ -68,7 +68,7 @@ function registrationActionChild(){
     body["lastName"] = document.getElementById("lastNameChildCC").value;
     let e = document.getElementById("dropDownOrigin");
     body["origin"] = e.options[e.selectedIndex].text;
-    body["birthday"] = document.getElementById("birtydayChildCC").value;
+    body["birthday"] = document.getElementById("birthdayChildCC").value;
     if (validateRegistrationForm(body, "CHILD")) {
         doRegistrationRequest(url, body);
         document.getElementById("registrationChildDiv").style.visibility= "hidden";
