@@ -30,12 +30,13 @@ public class PsychologistController {
 
     @PostMapping("/save")
     private ResponseEntity<?> savePsychologist(@RequestBody Psychologist psychologist) {
-        if (this.login(psychologist.getUsername()).getStatusCode() == HttpStatus.NOT_FOUND) {
+        //if (this.login(psychologist.getUsername()).getStatusCode() == HttpStatus.NOT_FOUND) {
             psychologistService.save(psychologist);
-            return new ResponseEntity<>("psychologist saved!", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("already exists!", HttpStatus.CONFLICT);
-        }
+            //return new ResponseEntity<>("psychologist saved!", HttpStatus.OK);
+        //} else {
+            //return new ResponseEntity<>("already exists!", HttpStatus.CONFLICT);
+        //}
+        return null;
     }
 
 }
