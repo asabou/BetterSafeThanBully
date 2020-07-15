@@ -261,8 +261,9 @@ function getMessages(x) {
         });
 }
 
-//const BASE_URL = "https://better-safe-than-bully.herokuapp.com/api";
-const BASE_URL = "http://localhost:8080/api"
+const BASE_URL = "https://better-safe-than-bully.herokuapp.com/api";
+//const BASE_URL = "http://localhost:8080/api"
+
 function openChildConversations() {
     let username = document.getElementById("usernameChild").value;
     let password = document.getElementById("passwordChild").value;

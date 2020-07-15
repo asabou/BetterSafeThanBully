@@ -1,5 +1,5 @@
 use heroku_fadc8a45afc8c94;
-select * from psychologist;
+select * from child;
 -- create table child (
 -- 	username varchar(200) primary key
 -- );
