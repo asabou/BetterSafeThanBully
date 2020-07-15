@@ -6,12 +6,13 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
 @Getter
 @Setter
 @ToString
-public class Psychologist {
+public class Psychologist implements Serializable {
     @Id
     private String username;
     private String password;

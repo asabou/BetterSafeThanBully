@@ -30,7 +30,7 @@ public class ParentController {
 
     @PostMapping("/save")
     private ResponseEntity<?> saveParent(@RequestBody Parent parent) {
-        if (this.login(parent.getUsername()).getStatusCode() == HttpStatus.NOT_FOUND) {
+        if (!parentService.findByUsername(parent.getUsername()).isPresent()) {
             parentService.save(parent);
             return new ResponseEntity<>("psychologist saved!", HttpStatus.OK);
         } else {

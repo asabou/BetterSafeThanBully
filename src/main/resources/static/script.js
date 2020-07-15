@@ -53,13 +53,26 @@ function registrationActionProf(){
     body["firstName"] = document.getElementById("firstNamePsychologistCC").value;
     body["lastName"] = document.getElementById("lastNamePsychologistCC").value;
     if (validateRegistrationForm(body, "PSYCHOLOGIST")) {
-        doRegistrationRequest(url, JSON.stringify(body));
+        doRegistrationRequest(url, body);
         document.getElementById("registrationProfDiv").style.visibility= "hidden";
     }
 }
 
 function registrationActionChild(){
-    document.getElementById("registrationChildDiv").style.visibility= "hidden";
+    let url = BASE_URL + "/child/save";
+    let body = {}
+    body["username"] = document.getElementById("usernameChildCC").value;
+    body["password"] = document.getElementById("passwordChildCC").value;
+    body["confirmPassword"] = document.getElementById("confirmPasswordChildCC").value;
+    body["firstName"] = document.getElementById("firstNameChildCC").value;
+    body["lastName"] = document.getElementById("lastNameChildCC").value;
+    let e = document.getElementById("dropDownOrigin");
+    body["origin"] = e.options[e.selectedIndex].text;
+    body["birthday"] = document.getElementById("birtydayChildCC").value;
+    if (validateRegistrationForm(body, "CHILD")) {
+        doRegistrationRequest(url, body);
+        document.getElementById("registrationChildDiv").style.visibility= "hidden";
+    }
 }
 
 function registrationActionParent(){
@@ -71,7 +84,7 @@ function registrationActionParent(){
     body["firstName"] = document.getElementById("firstNameParentCC").value;
     body["lastName"] = document.getElementById("lastNameParentCC").value;
     if (validateRegistrationForm(body, "PARENT")) {
-        doRegistrationRequest(url, JSON.stringify(body));
+        doRegistrationRequest(url, body);
         document.getElementById("registrationParentDiv").style.visibility= "hidden";
     }
 }
@@ -152,7 +165,7 @@ function doRegistrationRequest(url, body) {
             'Access-Control-Allow-Origin' : '*',
             'Content-type': 'application/json'
         },
-        body: body
+        body: JSON.stringify(body)
     })
         .then(response => {
             if (response.ok) {
@@ -248,8 +261,8 @@ function getMessages(x) {
         });
 }
 
-const BASE_URL = "https://better-safe-than-bully.herokuapp.com/api";
-
+//const BASE_URL = "https://better-safe-than-bully.herokuapp.com/api";
+const BASE_URL = "http://localhost:8080/api"
 function openChildConversations() {
     let username = document.getElementById("usernameChild").value;
     let password = document.getElementById("passwordChild").value;

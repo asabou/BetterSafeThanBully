@@ -30,7 +30,7 @@ public class PsychologistController {
 
     @PostMapping("/save")
     private ResponseEntity<?> savePsychologist(@RequestBody Psychologist psychologist) {
-        if (psychologistService.findByUsername(psychologist.getUsername()).isPresent()) {
+        if (!psychologistService.findByUsername(psychologist.getUsername()).isPresent()) {
             psychologistService.save(psychologist);
             return new ResponseEntity<>("psychologist saved!", HttpStatus.OK);
         } else {
