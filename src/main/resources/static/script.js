@@ -6,18 +6,161 @@ function displayDivLogProf() {
     document.getElementById("divLogProf").style.visibility="visible";
     document.getElementById("divLogChild").style.visibility= "hidden";
     document.getElementById("divLogParent").style.visibility= "hidden";
+    document.getElementById("registrationChildDiv").style.visibility="hidden";
+    document.getElementById("registrationParentDiv").style.visibility= "hidden";
 }
 
 function displayDivLogChild() {
     document.getElementById("divLogProf").style.visibility= "hidden";
     document.getElementById("divLogChild").style.visibility="visible";
     document.getElementById("divLogParent").style.visibility= "hidden";
+    document.getElementById("registrationProfDiv").style.visibility= "hidden";
+    document.getElementById("registrationParentDiv").style.visibility="hidden";
 }
 
 function displayDivLogParent() {
     document.getElementById("divLogProf").style.visibility= "hidden";
     document.getElementById("divLogChild").style.visibility= "hidden";
     document.getElementById("divLogParent").style.visibility="visible";
+    document.getElementById("registrationProfDiv").style.visibility= "hidden";
+    document.getElementById("registrationChildDiv").style.visibility= "hidden";
+}
+
+function displayDivRegistrationProf() {
+    document.getElementById("registrationProfDiv").style.visibility= "visible";
+    document.getElementById("registrationChildDiv").style.visibility="hidden";
+    document.getElementById("registrationParentDiv").style.visibility= "hidden";
+}
+
+function displayDivRegistrationChild() {
+    document.getElementById("registrationProfDiv").style.visibility= "hidden";
+    document.getElementById("registrationChildDiv").style.visibility= "visible";
+    document.getElementById("registrationParentDiv").style.visibility="hidden";
+}
+
+function displayDivRegistrationParent() {
+    document.getElementById("registrationProfDiv").style.visibility= "hidden";
+    document.getElementById("registrationChildDiv").style.visibility= "hidden";
+    document.getElementById("registrationParentDiv").style.visibility="visible";
+}
+
+function registrationActionProf(){
+    let url = BASE_URL + "/psychologist/save";
+    let body = {}
+    body["username"] = document.getElementById("usernamePsychologistCC").value;
+    body["password"] = document.getElementById("passwordPsychologistCC").value;
+    body["confirmPassword"] = document.getElementById("confirmPasswordPsychologistCC").value;
+    body["firstName"] = document.getElementById("firstNamePsychologistCC").value;
+    body["lastName"] = document.getElementById("lastNamePsychologistCC").value;
+    if (validateRegistrationForm(body, "PSYCHOLOGIST")) {
+        registrationRequest(url, body);
+        document.getElementById("registrationProfDiv").style.visibility= "hidden";
+    }
+}
+
+function registrationActionChild(){
+    document.getElementById("registrationChildDiv").style.visibility= "hidden";
+}
+
+function registrationActionParent(){
+    let url = BASE_URL + "/parent/save";
+    let body = {}
+    body["username"] = document.getElementById("usernameParentCC").value;
+    body["password"] = document.getElementById("passwordParentCC").value;
+    body["confirmPassword"] = document.getElementById("confirmPasswordParet=ntCC").value;
+    body["firstName"] = document.getElementById("firstNameParentCC").value;
+    body["lastName"] = document.getElementById("lastNameParentCC").value;
+    if (validateRegistrationForm(body, "PARENT")) {
+        registrationRequest(url, body);
+        document.getElementById("registrationParentDiv").style.visibility= "hidden";
+    }
+}
+
+function validateChild(body) {
+    let alertMessage = "";
+    if (body["username"] === "") {
+        alertMessage += "Utilizator invalid!\n";
+    }
+    if (body["password"] === "") {
+        alertMessage += "Parola invalida!\n";
+    }
+    if (body["confirmPassword"] === "") {
+        alertMessage += "Confirmare parola invalida!\n";
+    }
+    if (body["confirmPassword"] !== body["password"]) {
+        alertMessage += "Parolele nu se potrivesc!\n";
+    }
+    if (body["firstName"] === "") {
+        alertMessage += "Prenume invalid!\n";
+    }
+    if (body["lastName"] === "") {
+        alertMessage += "Nume invalid!\n";
+    }
+    if (body["origin"] === "") {
+        alertMessage += "Origin invalid!\n";
+    }
+    if (body["birthday"] === "" || body["birthday"] === null) {
+        alertMessage += "Zi de nastere invalida!\n";
+    }
+    if (alertMessage !== "") {
+        alert(alertMessage);
+        return false;
+    }
+    return true;
+}
+
+function validateParentOrPsychologist(body) {
+    let alertMessage = "";
+    if (body["username"] === "") {
+        alertMessage += "Utilizator invalid!\n";
+    }
+    if (body["password"] === "") {
+        alertMessage += "Parola invalida!\n";
+    }
+    if (body["confirmPassword"] === "") {
+        alertMessage += "Confirmare parola invalida!\n";
+    }
+    if (body["confirmPassword"] !== body["password"]) {
+        alertMessage += "Parolele nu se potrivesc!\n";
+    }
+    if (body["firstName"] === "") {
+        alertMessage += "Prenume invalid!\n";
+    }
+    if (body["lastName"] === "") {
+        alertMessage += "Nume invalid!\n";
+    }
+    if (alertMessage !== "") {
+        alert(alertMessage);
+        return false;
+    }
+    return true;
+}
+
+function validateRegistrationForm(body, personType) {
+    if (personType === "CHILD") {
+       return validateChild(body);
+    }
+    if (personType === "PARENT" || personType === "PSYCHOLOGIST") {
+        return validateParentOrPsychologist(body);
+    }
+}
+
+function doRegistrationRequest(url, body) {
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin' : '*',
+            'Content-type': 'application/json'
+        },
+        body: body
+    })
+        .then(response => response.json())
+        .then(json => console.log(json));
+    alert("Felicitari, inregistrarea dumneavoastra a fost incheiata cu succes! Va rugam sa va autentificati pentru a continua. ");
+}
+
+function registrationRequest(url, body) {
+   doRegistrationRequest(url, body);
 }
 
 function loginRequest(url, password) {
