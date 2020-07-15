@@ -172,6 +172,7 @@ function doRegistrationRequest(url, body) {
                 alert("Felicitari, inregistrarea dumneavoastra a fost incheiata cu succes! Va rugam sa va autentificati pentru a continua. ");
                 return response.json();
             } else {
+                alert("Userul deja exista!");
                 return Promise.reject("invalid!");
             }
         });
