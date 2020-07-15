@@ -53,7 +53,7 @@ function registrationActionProf(){
     body["firstName"] = document.getElementById("firstNamePsychologistCC").value;
     body["lastName"] = document.getElementById("lastNamePsychologistCC").value;
     if (validateRegistrationForm(body, "PSYCHOLOGIST")) {
-        registrationRequest(url, body);
+        doRegistrationRequest(url, body);
         document.getElementById("registrationProfDiv").style.visibility= "hidden";
     }
 }
