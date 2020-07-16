@@ -299,14 +299,8 @@ function generatePsychologistsProfileTable() {
             data.forEach(row => {
                 const tr = document.createElement("tr");
                 const td1 = document.createElement("td");
-                const td2 = document.createElement("td");
-                const td3 = document.createElement("td");
-                td1.textContent = row.firstName;
-                td2.textContent = row.lastName;
-                td3.textContent = row.username;
+                td1.textContent = row.firstName + " " + row.lastName;
                 tr.appendChild(td1);
-                tr.appendChild(td2);
-                tr.appendChild(td3);
                 tr.onclick = function() {
                     localStorage.setItem("usernameForConversation", row.username);
                     alert(row.username);
@@ -334,14 +328,8 @@ function generateParentsProfileTable() {
             data.forEach(row => {
                 const tr = document.createElement("tr");
                 const td1 = document.createElement("td");
-                const td2 = document.createElement("td");
-                const td3 = document.createElement("td");
-                td1.textContent = row.firstName;
-                td2.textContent = row.lastName;
-                td3.textContent = row.username;
+                td1.textContent = row.firstName + " " + row.lastName;
                 tr.appendChild(td1);
-                tr.appendChild(td2);
-                tr.appendChild(td3);
                 tr.onclick = function() {
                     localStorage.setItem("usernameForConversation", row.username);
                     alert(row.username);
@@ -370,19 +358,10 @@ function generateChildsProfileTable() {
                 const tr = document.createElement("tr");
                 const td1 = document.createElement("td");
                 const td2 = document.createElement("td");
-                const td3 = document.createElement("td");
-                const td4 = document.createElement("td");
-                const td5 = document.createElement("td");
-                td1.textContent = row.firstName;
-                td2.textContent = row.lastName;
-                td3.textContent = row.origin;
-                td4.textContent = row.birthday;
-                td5.textContent = row.username;
+                td1.textContent = row.firstName+ " " + row.lastName;
+                td2.textContent = row.origin;
                 tr.appendChild(td1);
                 tr.appendChild(td2);
-                tr.appendChild(td3);
-                tr.appendChild(td4);
-                tr.appendChild(td5);
                 tr.onclick = function() {
                     localStorage.setItem("usernameForConversation", row.username);
                     alert(row.username);

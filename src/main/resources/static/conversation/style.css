@@ -3,16 +3,16 @@ body {
     font-size: 100%;
 }
 
-#motto{
-    padding-top:2%;
-	padding-bottom: 2%;
-	margin-top:2%;
-	margin-bottom:4%;
-	width: 100%;
-	float: left;
-	margin: auto;
+#motto {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    width: 100%;
+    float: left;
+    margin: auto;
     font-family: Georgia;
-    font-size:  2.5em;
+    font-size: 2.5em;
     font-weight: bold;
     font-style: italic;
     text-decoration: underline;
@@ -21,40 +21,52 @@ body {
     text-shadow: 4px 4px 4px #ffffff;
 }
 
-#left{
+#left {
     padding-top: 1%;
     padding-bottom: 1%;
     margin: 2%;
     width: 40%;
-	float: left;
+    float: left;
     background-color: rgb(214, 167, 209);
 }
 
-#right{
+#right {
     margin-top: 2%;
-	width: 50%;
-	float: left;
-    
+    width: 50%;
+    float: left;
 }
 
-#conversations{
+#conversations {
     background-color: rgb(214, 167, 209);
     margin: auto;
     width: 90%;
 }
 
-#messages{
+#messages {
     background-color: rgb(214, 167, 209);
     margin: auto;
     width: 100%;
 }
 
-#photo{
-    width:100%;
-    height:60%;
+#photo {
+    width: 100%;
+    height: 60%;
     clear: left;
 }
 
-tr{
-    background-color:rgb(245, 198, 232);
+tr {
+    background-color: rgb(245, 198, 232);
+}
+
+#createConversation {
+    border: 3px solid #2db1d2;
+    background-color: #af83a6;
+    color: #ffffff;
+    font-family: Cambria;
+    font-weight: bold;
+    border-radius: 7px;
+    position: fixed;
+    bottom: 55%;
+    left: 2%;
+    clear: left;
 }
