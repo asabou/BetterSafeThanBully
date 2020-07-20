@@ -93,3 +93,7 @@ function typeMessage() {
 function openCreateTopicPage() {
     window.open("../create-topic/create-topic.html", "_self", "", true);
 }
+
+function sendMessage() {
+
+}

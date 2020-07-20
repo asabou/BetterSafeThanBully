@@ -14,7 +14,7 @@ use heroku_fadc8a45afc8c94;
 -- );
 -- create table message(
 -- 	messageID int primary key auto_increment, 
---  conversation_title varchar(200) references conversation(title)
+-- 	topic_title varchar(200) references topic(title)
 -- );
 
 -- insert into child (username, birthday, first_name, last_name, origin, password) values
@@ -40,7 +40,9 @@ use heroku_fadc8a45afc8c94;
 --     ('r.moise', 'Raluca','Moise', 'parola');
 -- select * from psychologist;
 
--- insert into conversation (title, username) values
+-- select * from topic;
+
+-- insert into topic (title, username) values
 -- 	('M-a urmarit pe holurile scolii', 'alexandru.sabou'),
 --     ('M-a injurat','florina.coste'),
 --     ('Nimeni nu ma intelege','alexandra.iurec'),
@@ -48,7 +50,11 @@ use heroku_fadc8a45afc8c94;
 --     ('Copilul meu a fost batut', 'ale.iurec'),
 --     ('Au ras de mine colegii', 'alexandru.sabou');
 
--- select * from conversation;
+-- select * from topic;
+
+-- drop table message;
+
+-- select * from message;
 
 -- insert into message(conversation_title,content,username_receiver, username_sender) values
 -- 	-- M-a rmarit pe holurile scolii
