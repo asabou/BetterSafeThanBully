@@ -46,7 +46,7 @@ caption {
     float: left;
 }
 
-#conversations {
+#topics {
     background-color: rgb(214, 167, 209);
     margin: auto;
     width: 90%;
@@ -64,11 +64,23 @@ caption {
     clear: left;
 }
 
+#friend {
+    width: 27%;
+    height: 30%;
+    float: right;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 6%;
+    margin-left: 8%;
+    border: 5px dashed #9c658f;
+    border-radius: 10px;
+}
+
 tr {
     background-color: rgb(245, 198, 232);
 }
 
-#createConversation {
+#createTopic {
     border: 3px solid #6cc9e0;
     background-color: #af83a6;
     color: #ffffff;
@@ -77,4 +89,37 @@ tr {
     font-weight: bold;
     border-radius: 7px;
     margin-top: 2%;
+}
+
+legend {
+    color: #1f7c93;
+    font-family: Cambria;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#divForm {
+    width: 56%;
+    float: left;
+    clear: left;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    background-color: #f9d2ed;
+    border: 3px solid #2db1d2;
+}
+
+#newMessage {
+    width: 100%;
+}
+
+#sendButton {
+    background-color: #b992b2;
+    color: #ffffff;
+    border: 3px solid #6cc9e0;
+    border-radius: 7px;
+    float: left;
+    font-family: Cambria;
+    font-size: 0.875em;
+    font-weight: bold;
 }

@@ -1,137 +1,136 @@
 <html>
 <head>
-	<script src="../script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="login.js"></script>
+	<link rel="stylesheet" type="text/css" href="login.css">
 	<title></title>
 </head>
 
 <body>
-<div id="title"> Better safe than bully </div>
+	<div id="title"> Better safe than bully </div>
 
-<div id="headerPage">
-	<p id="motto"> Ce tie nu-ti place, altuia nu-i face... dar nici nu trece cu vederea!<p>
-	<br>
-	<p>Bun venit in comunitatea noastra!</p>
-	<p>Aici poti vorbi deschis despre problemele tale cu specialisti sau alte persoane aflate in situatii similare. <br>
-		Continua ca :
-</div>
+	<div id="headerPage">
+		<p id="motto"> Ce tie nu-ti place, altuia nu-i face... dar nici nu trece cu vederea!<p>
+		<br>
+		<p>Bun venit in comunitatea noastra!</p>
+		<p>Aici poti vorbi deschis despre problemele tale cu specialisti sau alte persoane aflate in situatii similare. <br>
+			Continua ca :
+	</div>
 
-<table id="tableLogIn">
-	<tr>
-		<td id="cellProf" onclick="displayDivLogProf()">Profesionist</td>
-		<td id="cellChild" onclick="displayDivLogChild()">Copil</td>
-		<td id="cellParent" onclick="displayDivLogParent()">Parinte</td>
-	</tr>
-</table>
+	<table id="tableLogIn">
+		<tr>
+			<td id="cellProf" onclick="displayDivLogProf()">Profesionist</td>
+			<td id="cellChild" onclick="displayDivLogChild()">Copil</td>
+			<td id="cellParent" onclick="displayDivLogParent()">Parinte</td>
+		</tr>
+	</table>
 
-<div class="divLogIn" id="divLogProf">
-	<form id="logInProf">
-		<fieldset>
-			<legend> Autentificare profesionist</legend>
-			Utilizator: <input type="text" name="username" id="usernamePsychologist"> <br>
-			<br>
-			Parola: <input type="password" name="password" id="passwordPsychologist"> <br>
-			<br>
-			<input type="button" name="login" value="Autentifica" onclick="openPsychologistConversations()">
-			<input type="button" name="registrationDiv" value="Creaza un cont" onclick="displayDivRegistrationProf()">
-		</fieldset>
-	</form>
-</div>
+	<div class="divLogIn" id="divLogProf">
+		<form id="logInProf">
+			<fieldset>
+				<legend> Autentificare profesionist</legend>
+				Utilizator: <input type="text" name="username" id="usernamePsychologist"> <br>
+				<br>
+				Parola: <input type="password" name="password" id="passwordPsychologist"> <br>
+				<br>
+				<input type="button" name="login" value="Autentifica" onclick="openPsychologistTopics()">
+				<input type="button" name="registrationDiv" value="Creaza un cont" onclick="displayDivRegistrationProf()">
+			</fieldset>
+		</form>
+	</div>
 
-<div class="divLogIn" id="divLogChild">
-	<form id="logInChild" >
-		<fieldset>
-			<legend> Autentificare copil</legend>
-			Utilizator: <input type="text" name="username" id="usernameChild"> <br>
-			<br>
-			Parola: <input type="password" name="password" id="passwordChild"> <br>
-			<br>
-			<input type="button" name="login" value="Autentifica" onclick="openChildConversations()">
-			<input type="button" name="registrationDiv" value="Creaza un cont" onclick="displayDivRegistrationChild()">
-		</fieldset>
-	</form>
-</div>
+	<div class="divLogIn" id="divLogChild">
+		<form id="logInChild" >
+			<fieldset>
+				<legend> Autentificare copil</legend>
+				Utilizator: <input type="text" name="username" id="usernameChild"> <br>
+				<br>
+				Parola: <input type="password" name="password" id="passwordChild"> <br>
+				<br>
+				<input type="button" name="login" value="Autentifica" onclick="openChildTopics()">
+				<input type="button" name="registrationDiv" value="Creaza un cont" onclick="displayDivRegistrationChild()">
+			</fieldset>
+		</form>
+	</div>
 
-<div class="divLogIn" id="divLogParent">
-	<form id="logInParent" >
-		<fieldset>
-			<legend> Autentificare parinte</legend>
-			Utilizator: <input type="text" name="username" id="usernameParent"> <br>
-			<br>
-			Parola: <input type="password" name="password" id="passwordParent"> <br>
-			<br>
-			<input type="button" name="login" value="Autentifica" onclick="openParentConversations()">
-			<input type="button" name="registrationDiv" value="Creaza un cont" onclick="displayDivRegistrationParent()">
-		</fieldset>
-	</form>
-</div>
+	<div class="divLogIn" id="divLogParent">
+		<form id="logInParent" >
+			<fieldset>
+				<legend> Autentificare parinte</legend>
+				Utilizator: <input type="text" name="username" id="usernameParent"> <br>
+				<br>
+				Parola: <input type="password" name="password" id="passwordParent"> <br>
+				<br>
+				<input type="button" name="login" value="Autentifica" onclick="openParentTopics()">
+				<input type="button" name="registrationDiv" value="Creaza un cont" onclick="displayDivRegistrationParent()">
+			</fieldset>
+		</form>
+	</div>
 
-<div class="divRegistration" id="registrationProfDiv">
-	<form id="regisProf" >
-		<fieldset>
-			<legend>Creare cont</legend>
-			Nume utilizator: <input type="text" name="username" id="usernamePsychologistCC"> <br>
-			<br>
-			Parola: <input type="password" name="password" id="passwordPsychologistCC"> <br>
-			<br>
-			Confirmare parola: <input type="password" name="confirmPassword" id="confirmPasswordPsychologistCC"> <br>
-			<br>
-			Prenume: <input type="text" name="firstName" id="firstNamePsychologistCC"> <br>
-			<br>
-			Nume:  <input type="text" name="lastName" id="lastNamePsychologistCC"> <br>
-			<br>
-			<input type="button" name="registration" value="Inregistreaza" onclick="registrationActionProf()" >
-		</fieldset>
-	</form>
-</div>
+	<div class="divRegistration" id="registrationProfDiv">
+		<form id="regisProf" >
+			<fieldset>
+				<legend>Creare cont</legend>
+				Nume utilizator: <input type="text" name="username" id="usernamePsychologistCC"> <br>
+				<br>
+				Parola: <input type="password" name="password" id="passwordPsychologistCC"> <br>
+				<br>
+				Confirmare parola: <input type="password" name="confirmPassword" id="confirmPasswordPsychologistCC"> <br>
+				<br>
+				Prenume: <input type="text" name="firstName" id="firstNamePsychologistCC"> <br>
+				<br>
+				Nume:  <input type="text" name="lastName" id="lastNamePsychologistCC"> <br>
+				<br>
+				<input type="button" name="registration" value="Inregistreaza" onclick="registrationActionProf()" >
+			</fieldset>
+		</form>
+	</div>
 
-<div class="divRegistration" id="registrationChildDiv">
-	<form id="regisChild" >
-		<fieldset>
-			<legend>Creare cont</legend>
-			Nume utilizator: <input type="text" name="username" id="usernameChildCC"> <br>
-			<br>
-			Parola: <input type="password" name="password" id="passwordChildCC"> <br>
-			<br>
-			Confirmare parola: <input type="password" name="confirmPassword" id="confirmPasswordChildCC"> <br>
-			<br>
-			Prenume: <input type="text" name="firstName" id="firstNameChildCC"> <br>
-			<br>
-			Nume:  <input type="text" name="lastName" id="lastNameChildCC"> <br>
-			<br>
-			<p>Mediu de provenienta</p>
-			<select id="dropDownOrigin">
-				<option value="urban">URBAN</option>
-				<option value="rural">RURAL</option>
-			</select>
-			<br>
-			<br>
-			Data nasterii:<input type="date" name="birthday" id="birthdayChildCC"><br>
-			<br>
-			<input type="button" name="registration" value="Inregistreaza" onclick="registrationActionChild()" >
-		</fieldset>
-	</form>
-</div>
+	<div class="divRegistration" id="registrationChildDiv">
+		<form id="regisChild" >
+			<fieldset>
+				<legend>Creare cont</legend>
+				Nume utilizator: <input type="text" name="username" id="usernameChildCC"> <br>
+				<br>
+				Parola: <input type="password" name="password" id="passwordChildCC"> <br>
+				<br>
+				Confirmare parola: <input type="password" name="confirmPassword" id="confirmPasswordChildCC"> <br>
+				<br>
+				Prenume: <input type="text" name="firstName" id="firstNameChildCC"> <br>
+				<br>
+				Nume:  <input type="text" name="lastName" id="lastNameChildCC"> <br>
+				<br>
+				<p>Mediu de provenienta</p>
+				<select id="dropDownOrigin">
+					<option value="urban">URBAN</option>
+					<option value="rural">RURAL</option>
+				</select>
+				<br>
+				<br>
+				Data nasterii:<input type="date" name="birthday" id="birthdayChildCC"><br>
+				<br>
+				<input type="button" name="registration" value="Inregistreaza" onclick="registrationActionChild()" >
+			</fieldset>
+		</form>
+	</div>
 
-<div class="divRegistration" id="registrationParentDiv">
-	<form id="regisParent" >
-		<fieldset>
-			<legend>Creare cont</legend>
-			Nume utilizator: <input type="text" name="username" id="usernameParentCC"> <br>
-			<br>
-			Parola: <input type="password" name="password" id="passwordParentCC"> <br>
-			<br>
-			Confirmare parola: <input type="password" name="confirmPassword" id="confirmPasswordParentCC"> <br>
-			<br>
-			Prenume: <input type="text" name="firstName" id="firstNameParentCC"> <br>
-			<br>
-			Nume:  <input type="text" name="lastName" id="lastNameParentCC"> <br>
-			<br>
-			<input type="button" name="registration" value="Inregistreaza" onclick="registrationActionParent()">
-		</fieldset>
-	</form>
-</div>
-
+	<div class="divRegistration" id="registrationParentDiv">
+		<form id="regisParent" >
+			<fieldset>
+				<legend>Creare cont</legend>
+				Nume utilizator: <input type="text" name="username" id="usernameParentCC"> <br>
+				<br>
+				Parola: <input type="password" name="password" id="passwordParentCC"> <br>
+				<br>
+				Confirmare parola: <input type="password" name="confirmPassword" id="confirmPasswordParentCC"> <br>
+				<br>
+				Prenume: <input type="text" name="firstName" id="firstNameParentCC"> <br>
+				<br>
+				Nume:  <input type="text" name="lastName" id="lastNameParentCC"> <br>
+				<br>
+				<input type="button" name="registration" value="Inregistreaza" onclick="registrationActionParent()">
+			</fieldset>
+		</form>
+	</div>
 </body>
 
 </html>

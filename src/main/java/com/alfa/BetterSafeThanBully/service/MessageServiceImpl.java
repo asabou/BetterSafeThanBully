@@ -15,14 +15,13 @@ public class MessageServiceImpl implements IMessageService {
     }
 
     @Override
-    public List<Message> findMessagesByConversationTitle(String title) {
-        return this.messageRepo.findMessageByConversation_Title(title);
+    public List<Message> findMessagesByTopicTitle(String title) {
+        return messageRepo.findMessagesByTopic_Title(title);
     }
 
     @Override
-    public void save(Message message) {
+    public List<Message> save(Message message) {
         messageRepo.save(message);
+        return messageRepo.findMessagesByTopic_Title(message.getTopic().getTitle());
     }
-
-
 }

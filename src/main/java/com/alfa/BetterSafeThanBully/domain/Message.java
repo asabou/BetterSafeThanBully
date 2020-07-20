@@ -1,10 +1,12 @@
 package com.alfa.BetterSafeThanBully.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Setter
@@ -18,5 +20,6 @@ public class Message {
     private String usernameReceiver;
     private String content;
     @ManyToOne(fetch = FetchType.LAZY)
-    private Conversation conversation;
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Topic topic;
 }

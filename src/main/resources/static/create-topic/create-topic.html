@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="create-topic.css">
+    <script src="create-topic.js"></script>
+</head>
+
+<body onload="generateTables()">
+    <div id="motto"> Better safe than bully! </div>
+    <div id="pPsychologist">
+        <p> Profesionisti </p>
+        <table id="profilesPsychologists" width="100%">
+        </table>
+    </div>
+    <div id="pParent">
+        <p> Parinti </p>
+        <table id="profilesParents" width="100%">
+        </table>
+    </div>
+    <div id="pChild">
+        <p> Copii </p>
+        <table id="profilesChilds" width="100%">
+        </table>
+    </div>
+    <div id="divNewTopic">
+        <form id="newTopic">
+            <fieldset>
+                <legend> Topic nou</legend>
+                Persoana: <input id="personTopic" type="text" size="40" maxlength="40"> <br>
+                <br/> Titlu: <input id="title" type="text" size="65" maxlength="150"> <br>
+                <br/>
+                <textarea id="message" rows="10" cols="65" onclick="introductionMessage()">Introduceti mesajul</textarea> <br>
+                <br/>
+                <input type="button" id="sendButton" value="Trimite mesajul " onclick="createTopic()">
+            </fieldset>
+        </form>
+    </div>
+    <img id="community" src="../assets/community.jpg" alt="friendsPhoto" weight="95.5em" height="112.5em">
+</body>
+
+</html>

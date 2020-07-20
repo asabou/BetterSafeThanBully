@@ -4,14 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @ToString
-public class Conversation {
+public class Topic {
     @Id
     private String title;
     private String username;
