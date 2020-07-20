@@ -131,7 +131,5 @@ function sendMessageRequest() {
 
 function sendMessage() {
     sendMessageRequest();
-    let a = document.getElementById("message");
-    a.value = " Introduceti un nou mesaj ";
-    window.reload();
+    location.reload();
 }
