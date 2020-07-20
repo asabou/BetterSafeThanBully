@@ -232,7 +232,7 @@ function moveToTopicPage() {
     window.reload();
 }
 
-function introductionMessage() {
+function typeMessage() {
     let a = document.getElementById("message");
     a.innerHTML = "";
 }

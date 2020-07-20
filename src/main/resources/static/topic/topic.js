@@ -85,6 +85,11 @@ function getFullNameForSender(sender) {
         });
 }
 
+function typeMessage() {
+    let a = document.getElementById("message");
+    a.innerHTML = "";
+}
+
 function openCreateTopicPage() {
     window.open("../create-topic/create-topic.html", "_self", "", true);
 }
