@@ -56,7 +56,9 @@ use heroku_fadc8a45afc8c94;
 
 -- select * from message;
 
--- insert into message(conversation_title,content,username_receiver, username_sender) values
+-- select * from message;
+
+-- insert into message(topic_title,content,username_receiver, username_sender) values
 -- 	-- M-a rmarit pe holurile scolii
 -- 	('M-a urmarit pe holurile scolii','M-a urmarit pe hol si mi-a turnat lapte in cap... am ajuns acasa murdar. Desi nu l-am bagat in seama deloc, tot se ia de mine. Ce sa fac? ','r.moise','alexandru.sabou'),
 -- 	('M-a urmarit pe holurile scolii','Incearca sa soliciti ajutorul unui profesor, cu siguranta te va ajuta','alexandru.sabou','r.moise'),
@@ -76,5 +78,5 @@ use heroku_fadc8a45afc8c94;
 --     -- Au ras de mine colegii
 --     ('Au ras de mine colegii','Au ras de mine toti colegii azi, nu mai vreau sa merg la ora de educatie fizica, eu nu stiu sa joc fotbal, vreau sa imi rup piciorul si sa termin cu fotbalul','f.coste','alexandru.sabou'),
 --     ('Au ras de mine colegii','Incearca sa faci ceva care iti place, vorbeste cu parintii si spune-le ce pasiuni ai, poate esti un excelent basketbalist','alexandru.sabou','f.coste');
---
+
 -- select * from message;

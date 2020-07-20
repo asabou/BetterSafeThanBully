@@ -42,6 +42,7 @@ caption {
 
 #right {
     margin-top: 2%;
+    margin-left: 2%;
     width: 50%;
     float: left;
 }
@@ -67,11 +68,12 @@ caption {
 #friend {
     width: 27%;
     height: 30%;
-    float: right;
+    float: left;
+    clear: left;
     margin-top: 2%;
     margin-bottom: 2%;
-    margin-right: 6%;
-    margin-left: 8%;
+    margin-right: 5%;
+    margin-left: 4%;
     border: 5px dashed #9c658f;
     border-radius: 10px;
 }
@@ -100,11 +102,13 @@ legend {
 }
 
 #divForm {
-    width: 56%;
-    float: left;
-    clear: left;
+    width: 50%;
+    float: right;
+    clear: right;
     margin-top: 1%;
     margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 3%;
     background-color: #f9d2ed;
     border: 3px solid #2db1d2;
 }
