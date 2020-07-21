@@ -1,36 +1,35 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="topic.css">
-	<script src="topic.js"></script>
+    <link rel="stylesheet" type="text/css" href="topic.css">
+    <script src="../../../../../../../Downloads/static/static/topic/topic.js"></script>
 </head>
 
 <body onload="openTopicsPage()">
-	<div id="motto"> Better safe than bully! </div>
-	<div id="left">
-		<table id="topics">
-			<caption> TOPICURI : </caption>
-		</table>
-		<button id="createTopic" onclick="openCreateTopicPage()">
+    <div id="motto"> Better safe than bully! </div>
+    <div id="left">
+        <table id="topics">
+            <caption> TOPICURI : </caption>
+        </table>
+        <button id="createTopic" onclick="openCreateTopicPage()">
 			Creeaza un topic:
 		</button>
-	</div>
-	<div id="right">
-		<table id="messages" width="80%">
-		</table>
-	</div>
-	<div id="divForm">
-		<form id="newMessage">
-			<fieldset>
-				<legend> Mesaj nou </legend>
-				<textarea id="message" rows="7" cols="50" onclick="typeMessage()"> Introduceti mesajul </textarea> <br>
-				<br/>
-				<input type="button" id="sendButton" value="Trimite mesajul " onclick="sendMessage()">
-			</fieldset>
-		</form>
-	</div>
-	<img id="friend" src="../assets/friend.jpg" alt="friendPhoto">
-	<img id="photo" src="../assets/bulling.jpg" alt="bullingPhoto">
+    </div>
+    <div id="right">
+        <table id="messages" width="80%">
+        </table>
+    </div>
+    <div id="divForm">
+        <form id="newMessage">
+            <fieldset>
+                <legend> Mesaj nou </legend>
+                <textarea id="message" rows="7" cols="50" onclick="typeMessage()"> Introduceti mesajul </textarea> <br>
+                <br/>
+                <input type="button" id="sendButton" value="Trimite mesajul " onclick="sendMessage()">
+            </fieldset>
+        </form>
+    </div>
+    <img id="photo" src="../../../../../../../Downloads/static/static/assets/bulling.jpg" alt="bullingPhoto">
 </body>
 
 </html>
