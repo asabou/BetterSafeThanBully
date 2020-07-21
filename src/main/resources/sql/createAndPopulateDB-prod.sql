@@ -80,3 +80,4 @@ use heroku_fadc8a45afc8c94;
 --     ('Au ras de mine colegii','Incearca sa faci ceva care iti place, vorbeste cu parintii si spune-le ce pasiuni ai, poate esti un excelent basketbalist','alexandru.sabou','f.coste');
 
 -- select * from message;
+select * from topic;
