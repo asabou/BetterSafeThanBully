@@ -9,4 +9,5 @@ public interface ITopicService {
     List<Topic> findTopicByUsername(String username);
     List<Topic> save(Topic topic);
     Optional<Topic> findTopicByTitle(String title);
+    List<Topic> findAll();
 }

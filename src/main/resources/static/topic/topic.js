@@ -2,8 +2,36 @@ const BASE_URL = "https://better-safe-than-bully.herokuapp.com/api";
 //const BASE_URL = "http://localhost:8080/api"
 
 function openTopicsPage() {
-    getTopicsForUser(localStorage.getItem("usernameFromLogin"));
+    //getTopicsForUser(localStorage.getItem("usernameFromLogin"));
+    getAllTopics();
     document.getElementById("divForm").style.visibility = "hidden";
+}
+
+function getAllTopics() {
+    const url = BASE_URL + "/topic/all";
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .then(data => {
+            let table = document.getElementById("topics");
+            data.forEach(row => {
+                const topicTitle = row.title;
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.textContent = topicTitle;
+                tr.appendChild(td);
+                tr.onclick = function() {
+                    getMessages(this);
+                }
+                tr.id = topicTitle;
+                table.appendChild(tr);
+            });
+        });
 }
 
 function getTopicsForUser(username) {

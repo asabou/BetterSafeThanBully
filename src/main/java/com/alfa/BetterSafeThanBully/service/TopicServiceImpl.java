@@ -30,4 +30,9 @@ public class TopicServiceImpl implements ITopicService {
     public Optional<Topic> findTopicByTitle(String title) {
         return topicRepo.findById(title);
     }
+
+    @Override
+    public List<Topic> findAll() {
+        return topicRepo.findAll();
+    }
 }

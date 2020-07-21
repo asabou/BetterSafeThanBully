@@ -33,4 +33,9 @@ public class TopicController {
         return new ResponseEntity<>(topicService.findTopicByTitle(title), HttpStatus.OK);
     }
 
+    @GetMapping("/all")
+    private ResponseEntity<?> findAll() {
+        return new ResponseEntity<>(topicService.findAll(), HttpStatus.OK);
+    }
+
 }
