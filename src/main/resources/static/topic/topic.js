@@ -129,7 +129,6 @@ function openCreateTopicPage() {
 }
 
 function sendMessageRequest() {
-    const url = BASE_URL + "/message/send";
     let bodyMessage = {};
     let bodyTopic = {};
     bodyTopic["title"] = localStorage.getItem("selectedTopicTitle");
@@ -166,5 +165,5 @@ function sendMessageRequest() {
 function sendMessage() {
     sendMessageRequest();
     let a = document.getElementById("message");
-    a.value = " Introdu un nou mesaj ";
+    a.value = "";
 }
