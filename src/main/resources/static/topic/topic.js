@@ -150,6 +150,12 @@ function sendMessageRequest() {
     })
         .then(resp => {
             if (resp.ok) {
+                let table = document.getElementById("messages");
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.textContent = bodyMessage["usernameSender"] + " : " + bodyMessage["content"] + "\n";
+                tr.appendChild(td);
+                table.appendChild(tr);
                 return resp.json();
             } else {
                 return Promise.reject("message save failed");
@@ -159,5 +165,6 @@ function sendMessageRequest() {
 
 function sendMessage() {
     sendMessageRequest();
-    location.reload();
+    let a = document.getElementById("message");
+    a.value = " Introdu un nou mesaj ";
 }
