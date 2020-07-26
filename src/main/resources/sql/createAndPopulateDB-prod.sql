@@ -23,7 +23,7 @@ use heroku_fadc8a45afc8c94;
 -- 	('florina.coste', '2009-02-13', 'Florina', 'Coste', 'RURAL','parola'),
 -- 	('raluca.moise', '2008-11-11', 'Raluca', 'Moise', 'RURAL','parola');
 
--- select * from child;
+select * from child;
 
 -- insert into parent (username, first_name, last_name, password) values
 -- 	('ale.sabou','Alexandru', 'Sabou', 'parola'),
@@ -80,4 +80,4 @@ use heroku_fadc8a45afc8c94;
 --     ('Au ras de mine colegii','Incearca sa faci ceva care iti place, vorbeste cu parintii si spune-le ce pasiuni ai, poate esti un excelent basketbalist','alexandru.sabou','f.coste');
 
 -- select * from message;
-select * from topic;
+-- select * from topic;
